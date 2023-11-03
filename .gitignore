@@ -1,0 +1,20 @@
+# dependencies
+node_modules
+
+# builds
+.next/
+out/
+build
+dist
+
+# misc
+.DS_Store
+*.pem
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# turbo
+.turbo

@@ -1,0 +1,16 @@
+{
+    "name": "nelt-stack",
+    "version": "0.0.0",
+    "description": "Quick way to create a full stack web app & mobile app",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "build": "turbo run build"
+    },
+    "dependencies": {
+        "eslint": "^8.52.0",
+        "prettier": "^3.0.3",
+        "turbo": "^1.10.16",
+        "typescript": "^5.2.2"
+    }
+}

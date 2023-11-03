@@ -1,0 +1,1 @@
+export { promptDatabase } from './database'
