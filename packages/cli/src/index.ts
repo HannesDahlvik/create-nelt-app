@@ -9,7 +9,7 @@ import prompts from 'prompts'
 import path from 'node:path'
 import packageJson from '../package.json'
 import { createApp } from './createApp'
-import { promptDatabase } from './prompts'
+import { promptAuth, promptDatabase } from './prompts'
 
 let projectPath = ''
 
@@ -49,15 +49,11 @@ async function main(): Promise<void> {
     const packageManager = !!options.useNpm ? 'npm' : !!options.usePnpm ? 'pnpm' : getPkgManager()
 
     try {
-        const promptDB = await promptDatabase()
-
-        if (!promptDB) {
-            throw 'test'
-        }
-
-        const { database, databaseDriver, databaseDialect } = promptDB
+        const { database, databaseDialect, databaseDriver } = await promptDatabase()
+        const { includeAuth } = await promptAuth()
 
         console.log(database, databaseDriver, databaseDialect)
+        console.log(includeAuth)
         console.log(options)
 
         await createApp({

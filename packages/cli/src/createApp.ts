@@ -12,10 +12,10 @@ export async function createApp({ appPath, packageManager }: CreateAppProps): Pr
     const appName = path.basename(appPath)
     const root = path.resolve(appPath)
 
-    fs.mkdirSync(appPath)
+    /* fs.mkdirSync(appPath)
 
     console.log(packageManager)
     console.log(`Creating a new NELT app in ${chalk.green('./' + appName)}\n`)
 
-    process.chdir(root)
+    process.chdir(root) */
 }
