@@ -9,7 +9,7 @@ import prompts from 'prompts'
 import path from 'node:path'
 import packageJson from '../package.json'
 import { createApp } from './createApp'
-import { promptAuth, promptDatabase } from './prompts'
+import { promptAuth, promptDatabase, promptStyles } from './prompts'
 
 let projectPath = ''
 
@@ -51,10 +51,14 @@ async function main(): Promise<void> {
     try {
         const { database, databaseDialect, databaseDriver } = await promptDatabase()
         const { includeAuth } = await promptAuth()
+        const { includeTailwind } = await promptStyles()
 
         console.log(database, databaseDriver, databaseDialect)
         console.log(includeAuth)
+        console.log(includeTailwind)
         console.log(options)
+
+        console.log(resolvedProjectPath)
 
         await createApp({
             appPath: resolvedProjectPath,
