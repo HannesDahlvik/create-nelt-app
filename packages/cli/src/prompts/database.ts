@@ -1,8 +1,8 @@
 import prompts from 'prompts'
 import { z } from 'zod'
 
-type Database = 'postgres' | 'mysql' | 'sqlite'
-type DatabaseDriver = 'prisma' | 'drizzle' | 'kysely'
+export type Database = 'postgres' | 'mysql' | 'sqlite'
+export type DatabaseDriver = 'prisma' | 'drizzle' | 'kysely'
 
 interface DatabaseDialect {
     drivers: DatabaseDriver[]
@@ -29,7 +29,7 @@ const availableDatabaseDialects: DatabaseDialects[] = [
             },
             {
                 drivers: ['drizzle'],
-                value: '@planetscale/database'
+                value: 'planetscale'
             }
         ]
     },
@@ -55,7 +55,7 @@ const availableDatabaseDialects: DatabaseDialects[] = [
             },
             {
                 drivers: ['drizzle'],
-                value: '@libsql/client'
+                value: 'libsql'
             }
         ]
     }

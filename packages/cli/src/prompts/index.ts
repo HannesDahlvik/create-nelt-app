@@ -1,3 +1,3 @@
 export { promptAuth } from './auth'
-export { promptDatabase } from './database'
+export { promptDatabase, Database, DatabaseDriver } from './database'
 export { promptStyles } from './styles'

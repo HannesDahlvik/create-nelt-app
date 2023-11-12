@@ -1,0 +1,19 @@
+{
+    "name": "@acme/api",
+    "version": "0.1.0",
+    "main": "./index.ts",
+    "types": "./index.ts",
+    "dependencies": {
+        "@trpc/client": "^10.43.3",
+        "@trpc/server": "^10.43.3",
+        "next": "^14.0.0",
+        "react": "18.2.0",
+        "superjson": "^2.2.0",
+        "zod": "^3.22.0"
+    },
+    "devDependencies": {
+        "@types/node": "20.9.0",
+        "@types/react": "18.2.37",
+        "typescript": "5.2.2"
+    }
+}

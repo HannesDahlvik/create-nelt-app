@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import { Command } from '@commander-js/extra-typings'
 import { TITLE_TEXT } from './consts'
 import { getPkgManager } from './utils'
@@ -8,7 +7,7 @@ import gradient from 'gradient-string'
 import prompts from 'prompts'
 import path from 'node:path'
 import packageJson from '../package.json'
-import { createApp } from './createApp'
+import { createProject } from './helpers/createProject'
 import { promptAuth, promptDatabase, promptStyles } from './prompts'
 
 let projectPath = ''
@@ -53,16 +52,16 @@ async function main(): Promise<void> {
         const { includeAuth } = await promptAuth()
         const { includeTailwind } = await promptStyles()
 
-        console.log(database, databaseDriver, databaseDialect)
-        console.log(includeAuth)
-        console.log(includeTailwind)
-        console.log(options)
-
-        console.log(resolvedProjectPath)
-
-        await createApp({
+        await createProject({
             appPath: resolvedProjectPath,
-            packageManager
+            packageManager,
+            config: {
+                database,
+                databaseDialect,
+                databaseDriver,
+                usingAuth: includeAuth,
+                usingTailwind: includeTailwind
+            }
         })
     } catch (error) {
         throw error

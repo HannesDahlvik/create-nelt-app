@@ -19,18 +19,29 @@
     },
     "dependencies": {
         "@commander-js/extra-typings": "^11.1.0",
+        "@trpc/client": "^10.43.3",
+        "@trpc/server": "^10.43.3",
         "chalk": "^5.3.0",
         "drizzle-orm": "^0.28.6",
+        "execa": "^8.0.1",
+        "fs-extra": "^11.1.1",
         "gradient-string": "^2.0.2",
         "kysely": "^0.26.3",
+        "lucia": "^2.7.4",
+        "next": "^14.0.2",
         "ora": "^7.0.1",
         "prompts": "^2.4.2",
+        "react": "^18.2.0",
+        "sort-package-json": "^2.6.0",
+        "superjson": "^2.2.1",
         "zod": "^3.22.4"
     },
     "devDependencies": {
+        "@types/fs-extra": "^11.0.3",
         "@types/gradient-string": "^1.1.4",
-        "@types/node": "^20.8.9",
+        "@types/node": "^20.9.0",
         "@types/prompts": "^2.4.7",
+        "@types/react": "^18.2.37",
         "tsup": "^7.2.0",
         "typescript": "^5.2.2"
     }
